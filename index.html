@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+
+
+
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="index.css">
+</head>
+<body>
+   <div class="container">
+       <div class="form">
+         
+<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScD-P0cDxrajxof6QCGWRTM_8bdzRmawdC_lkTCOdtfg311VQ/formResponse"
+  method="post" target="hidden_iframe" name="myform"
+ onsubmit="submitted=true"s >
+            <h2> Login form</h2>
+          <form>   
+
+                  <div class="inputBox">
+		     <input type="text" placeholder="username" name="uid" required/> <small id ="usmall"></small>
+                  </div>
+                    
+                   <div class="inputBox">
+		     <input type="password" placeholder="password" name="pid" required/> <small id ="psmall"></small>     
+                   </div>
+                   
+                 <br>
+                    <div class="inputBox">
+		     <input type="submit" value="Login">
+                    </div>
+                      <p> Forget Password ?<a href="#">
+                        Click Here</a></p>
+
+    </form>
+    
+    <script>
+        
+      function validate()
+      {
+        var ptrn= /^([^0-9\W]*)$/;
+        if(ptrn.test(document.myform.uid.value))	
+        {
+          document.getElementById("usmall").textContent="";
+          document.getElementById("usmall").style.color="green";
+        }
+        else
+        {
+        document.getElementById("usmall").textContent="Please enter only alpabets.";
+          document.getElementById("usmall").style.color="red";
+        }
+      }
+      document.myform.uid.addEventListener("keyup",validate);
+
+
+
+
+      function validatepass()
+      {
+        var ptrn= /^([^0-9\W]*)$/;
+        if(ptrn.test(document.myform.pid.value))	
+        {
+          document.getElementById("psmall").textContent="Password must contain atleast 1 number or special char.";
+          document.getElementById("psmall").style.color="red";
+        }
+        else
+        {
+        document.getElementById("psmall").textContent="";
+          document.getElementById("psmall").style.color="red";
+        }
+      }
+      document.myform.pid.addEventListener("keyup",validatepass);
+
+
+    </script>
+      
+       </div>
+    </div>
+
+</body>
+</html>
